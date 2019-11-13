@@ -1,0 +1,359 @@
+Homework 4.1
+
+public static void main(String[] args){
+        int[] myArray = new int [10];
+        Random rand = new Random();
+        int inArray;
+
+        for (int i = 0; i < myArray.length; i++) {
+            inArray = rand.nextInt(89);
+            inArray += 10;
+            myArray[i] = inArray;
+        }
+        for (int i = 0; i < myArray.length; i++) {
+            System.out.println(i + " -  " + myArray[i]);
+        }
+
+        System.out.println("Please input number");
+        Scanner scanner = new Scanner(System.in);
+        int input = scanner.nextInt();
+        for (int i = 0; i < myArray.length; i++) {
+            if (input == myArray[i]){
+                System.out.println("Array contains entered number");
+                i+= 10;
+            }
+            if (i == myArray.length - 1)
+            {
+                System.out.println("Array not contains entered number");
+            }
+        }
+    }
+
+
+Homework 4.2
+
+public static void main(String[] args){
+        int[] myArray = new int [10];
+        Random rand = new Random();
+        int inArray;
+
+        for (int i = 0; i < myArray.length; i++) {
+            inArray = rand.nextInt(89);
+            inArray += 10;
+            myArray[i] = inArray;
+        }
+        for (int i = 0; i < myArray.length; i++) {
+            System.out.println(i + " -  " + myArray[i]);
+        }
+
+        for (int i = 0; i < myArray.length; i++) {
+            for (int j = 0; j < myArray.length - 1; j++) {
+                if (myArray[j] > myArray[j + 1])
+                {
+                    int keep = myArray[j];
+                    myArray[j] = myArray[j + 1];
+                    myArray[j + 1] = keep;
+                }
+            }
+        }
+        System.out.println("Sorting in 'asc' oder");
+
+        for (int i = 0; i < myArray.length; i++) {
+            System.out.println(i + " -  " + myArray[i]);
+        }
+    }
+
+
+Homework 4.3
+
+public static void main(String[] args){
+        int[] myArray = new int [10];
+        Random rand = new Random();
+        int inArray;
+
+        for (int i = 0; i < myArray.length; i++) {
+            inArray = rand.nextInt(89);
+            inArray += 10;
+            myArray[i] = inArray;
+        }
+        for (int i = 0; i < myArray.length; i++) {
+            System.out.println(i + " -  " + myArray[i]);
+        }
+
+        for (int i = 0; i < myArray.length; i++) {
+            for (int j = 0; j < myArray.length - 1; j++) {
+                if (myArray[j] < myArray[j + 1])
+                {
+                    int keep = myArray[j];
+                    myArray[j] = myArray[j + 1];
+                    myArray[j + 1] = keep;
+                }
+            }
+        }
+        System.out.println("Sorting in 'desc' oder");
+
+        for (int i = 0; i < myArray.length; i++) {
+            System.out.println(i + " -  " + myArray[i]);
+        }
+    }
+
+
+Homework 4.4
+
+public static void main(String[] args){
+        int[] myArray = new int [10];
+        Random rand = new Random();
+        int inArray;
+
+        for (int i = 0; i < myArray.length; i++) {
+            inArray = rand.nextInt(89);
+            inArray += 10;
+            myArray[i] = inArray;
+        }
+        for (int i = 0; i < myArray.length; i++) {
+            System.out.println(i + " -  " + myArray[i]);
+        }
+
+        System.out.println("please input number");
+        Scanner scanner = new Scanner(System.in);
+        int input = scanner.nextInt();
+        int cond = 0;
+        for (int i = 0; i < myArray.length; i++) {
+            if (myArray[i] == input){
+                System.out.println("index is " + i);
+                if (i == myArray.length){
+                    cond += 1;
+                }
+            }
+        }
+        if (cond == 0){
+            System.out.println("No such number");
+        }
+    }
+
+
+Homework 4.5
+
+public static void main(String[] args){
+        int[] [] matrix = new int [10] [15];
+        Random rand = new Random();
+        int inArray;
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                inArray = rand.nextInt(89);
+                inArray += 10;
+                matrix[i][j] = inArray;
+            }
+        }
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + ",");
+            }
+            System.out.println();
+        }
+
+        int max = 0;
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (max < matrix[i][j]){
+                    max = matrix[i][j];
+                }
+            }
+        }
+        System.out.println("max " + max);
+    }
+
+
+Homework 4.6
+
+public static void main(String[] args){
+        int[] [] matrix = new int [10] [15];
+        Random rand = new Random();
+        int inArray;
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                inArray = rand.nextInt(89);
+                inArray += 10;
+                matrix[i][j] = inArray;
+            }
+
+        }
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + ",");
+            }
+            System.out.println();
+        }
+
+        System.out.println("please input row number");
+        Scanner scanner = new Scanner(System.in);
+        int rowNumber = scanner.nextInt();
+        rowNumber -= 1;
+        int sum = 0;
+
+        for (int i = 0; i < matrix[0].length; i++) {
+            sum += matrix[rowNumber][i];
+        }
+
+        System.out.println("sum is " + sum);
+    }
+
+
+Homework 4.7
+
+public static void main(String[] args){
+        int[] [] matrix = new int [10] [15];
+        Random rand = new Random();
+        int inArray;
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                inArray = rand.nextInt(89);
+                inArray += 10;
+                matrix[i][j] = inArray;
+            }
+
+        }
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + ",");
+            }
+            System.out.println();
+        }
+        System.out.println("------------");
+        for (int i = 0; i < matrix[0].length; i++) {
+            for (int j = matrix.length - 1; j >= 0; j--) {
+                System.out.print(matrix[j][i] + ",");
+            }
+            System.out.println();
+        }
+    }
+
+
+Homework 4.8
+
+public static void main(String[] args){
+        int[] [] matrix = new int [10] [15];
+        Random rand = new Random();
+        int inArray;
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                inArray = rand.nextInt(89);
+                inArray += 10;
+                matrix[i][j] = inArray;
+            }
+
+        }
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + ",");
+            }
+            System.out.println();
+        }
+        System.out.println("----------");
+        for (int i = matrix.length - 1; i >= 0; i--) {
+            for (int j = matrix[i].length - 1; j >= 0; j--) {
+                System.out.print(matrix[i][j] + ",");
+            }
+            System.out.println();
+        }
+    }
+
+
+Homework 4.9
+
+public static void main(String[] args){
+        int[] [] matrix = new int [10] [15];
+        Random rand = new Random();
+        int inArray;
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                inArray = rand.nextInt(89);
+                inArray += 10;
+                matrix[i][j] = inArray;
+            }
+
+        }
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + ",");
+            }
+            System.out.println();
+        }
+        System.out.println("------------");
+        for (int i = matrix[0].length - 1; i >= 0; i--) {
+            for (int j = 0; j < matrix.length; j++) {
+                System.out.print(matrix[j][i] + ",");
+            }
+            System.out.println();
+        }
+    }
+
+
+Homework 4.10
+
+public static void main(String[] args){
+        int[] [] matrix = new int [5] [5];
+        Random rand = new Random();
+        int inArray;
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                inArray = rand.nextInt(89);
+                inArray += 10;
+                matrix[i][j] = inArray;
+            }
+
+        }
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + ",");
+            }
+            System.out.println();
+        }
+        Scanner scanner = new Scanner(System.in);
+        int input;
+
+        while (true) {
+            System.out.println("---------MENU---------");
+            System.out.println(" 1.  For rotating 90*");
+            System.out.println(" 2.  For rotating 180*");
+            System.out.println(" 3.  For rotating 270*");
+            System.out.println(" 4.  For Exit");
+            input = scanner.nextInt();
+            if (input == 1){
+                for (int i = 0; i < matrix[0].length; i++) {
+                    for (int j = matrix.length - 1; j >= 0; j--) {
+                        System.out.print(matrix[j][i] + ",");
+                    }
+                    System.out.println();
+                }
+            }
+            if (input == 2){
+                for (int i = matrix.length - 1; i >= 0; i--) {
+                    for (int j = matrix[i].length - 1; j >= 0; j--) {
+                        System.out.print(matrix[i][j] + ",");
+                    }
+                    System.out.println();
+                }
+            }
+            if (input == 3) {
+                for (int i = matrix[0].length - 1; i >= 0; i--) {
+                    for (int j = 0; j < matrix.length; j++) {
+                        System.out.print(matrix[j][i] + ",");
+                    }
+                    System.out.println();
+                }
+            }
+            if (input == 4){
+                break;
+            }
+        }
+        System.out.println("Exit");
+    }
+
