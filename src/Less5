@@ -1,0 +1,728 @@
+Homework 1
+
+public static void main(String[] args){
+        Random rand = new Random();
+        int num1 = rand.nextInt();
+        int num2 = rand.nextInt();
+	int sum = calculateSum(num1, num2);
+        System.out.println("Sum is " + sum);
+
+    }
+        public static int calculateSum (int num1, int num2){
+        int sum = num1 + num2;
+        return sum;
+        }
+
+}
+
+
+Homework 2
+
+public static void main(String[] args){
+        Random rand = new Random();
+        int num1 = rand.nextInt();
+        int num2 = rand.nextInt();
+        calculateProduct(num1, num2);
+	int product = calculateProduct(num1, num2);
+        System.out.println("Product is " + product);
+
+    }
+        public static int calculateProduct (int num1, int num2){
+        int product = num1 * num2;
+        return product;
+        }
+
+}
+
+
+Homework 3
+
+public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input first number");
+        int num1 = scanner.nextInt();
+        System.out.println("Please input second number");
+        int num2 = scanner.nextInt();
+        int product = calculateProduct(num1, num2);
+
+        double cubeOfProduct = calculateCubeOfProduct(product);
+        System.out.println("Cube of product is " + cubeOfProduct);
+
+    }
+        public static int calculateProduct (int num1, int num2){
+        int product = num1 * num2;
+        return product;
+        }
+
+        public static double calculateCubeOfProduct(int product){
+        double cubeOfProduct = Math.pow(product, 3);
+        return cubeOfProduct;
+        }
+}
+
+
+Homework 4
+
+public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input first number");
+        int num1 = scanner.nextInt();
+        System.out.println("Please input second number");
+        int num2 = scanner.nextInt();
+        System.out.println("Please input third number");
+        int num3 = scanner.nextInt();
+        int smallestnum = findSmallestNumber(num1, num2, num3);
+        System.out.println("Smallest number among three numbers is " + smallestnum);
+
+
+    }
+        public static int findSmallestNumber (int num1, int num2, int num3){
+        if (num1 > num2 && num1 > num3){
+            return num1;
+        }
+        if (num2 > num1 && num2 > num3){
+            return num2;
+        }
+        else {
+            return num3;
+        }
+
+        }
+
+}
+
+
+Homework 5
+
+public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please write something");
+        String text = scanner.nextLine();
+        displayMiddleCharacterOfString(text);
+
+    }
+        public static void displayMiddleCharacterOfString(String text){
+        char middle = text.charAt(text.length() / 2);
+            System.out.println("Middle character of a string is " + middle);
+        }
+}
+
+
+Homework 6
+
+public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please write sentence");
+        String sentence = scanner.nextLine();
+        int quantityOfWords = contAllWordsInString(sentence);
+        System.out.println("Words in sentence is " + quantityOfWords);
+
+    }
+        public static int contAllWordsInString(String text){
+            int quantity = 1;
+            for (int i = 0; i < text.length(); i++) {
+                if (text.charAt(i) == ' '){
+                    quantity ++;
+                }
+            }
+            return quantity;
+        }
+}
+
+
+Homework 7
+
+public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input a year");
+        int year = scanner.nextInt();
+
+        if (checkYear(year)){
+            System.out.println("This year is a leap year");
+        }
+        else {
+            System.out.println("This year isn't leap year");
+        }
+
+    }
+        public static boolean checkYear (int year){
+            if (year % 4 == 0){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+}
+
+
+Homework 8
+
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please write a password");
+        System.out.println("-- A password must have at least ten characters.");
+        System.out.println("-- A password consists of only letters and digits.");
+        System.out.println("-- A password must contain at least two digits.");
+        String password = scanner.nextLine();
+        if (checkPasswordValidOrNot(password)) {
+            System.out.println("Valid");
+        }
+        else {
+            System.out.println("not valid");
+        }
+
+    }
+
+    public static boolean isLetter(char ch) {
+        ch = Character.toUpperCase(ch);
+        return (ch >= 'A' && ch <= 'Z');
+    }
+
+    public static boolean isNumeric(char ch) {
+        return (ch >= '0' && ch <= '9');
+    }
+
+    public static boolean checkPasswordValidOrNot(String password) {
+        boolean keep = true;
+        int quantity = 0;
+        for (int i = 0; i < password.length(); i++) {
+            if (isLetter(password.charAt(i)) || isNumeric(password.charAt(i))) {
+                keep = true;
+            }
+            else {
+                keep = false;
+            }
+
+            if (isNumeric(password.charAt(i))){
+                quantity ++;
+            }
+        }
+        if (keep && password.length() < 11 && quantity <= 2){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+}
+
+
+Homework 9
+
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input radius");
+        double radius = scanner.nextDouble();
+        double AreaOfCircle = calculateAreaOfCircle(radius);
+        double PerimeterOfCircle = calculatePerimeterOfCircle(radius);
+
+    }
+
+    public static double calculateAreaOfCircle(double radius){
+        double area = Math.PI * Math.pow(radius, 2);
+        return area;
+    }
+
+    public static double calculatePerimeterOfCircle(double radius){
+        double perimeter = 2 * Math.PI * radius;
+        return perimeter;
+    }
+}
+
+
+Homework 10
+
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input first side size");
+        double sideA = scanner.nextDouble();
+        System.out.println("Please input second side size");
+        double sideB = scanner.nextDouble();
+        System.out.println("Please input third side size");
+        double sideC = scanner.nextDouble();
+
+        if (checkTriangleValidOrNot(sideA, sideB, sideC)){
+            double perimeterOfTriangle = calculatePerimeterOfTriangle(sideA, sideB, sideC);
+            double areaOfTriangle = calculateAreaOfTriangle(sideA, sideB, sideC, perimeterOfTriangle);
+
+            System.out.println("Perimeter of triangle is " + perimeterOfTriangle);
+            System.out.println("Area of triangle is " + areaOfTriangle);
+        }
+    }
+
+    public static boolean checkTriangleValidOrNot(double sideA, double sideB, double sideC){
+        if (sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA){
+            return true;
+        }
+        else {
+            return  false;
+        }
+    }
+
+    public static double calculatePerimeterOfTriangle(double sideA, double sideB, double sideC){
+        double perimeter = sideA + sideB + sideC;
+        return perimeter;
+    }
+
+    public static double calculateAreaOfTriangle(double sideA, double sideB, double sideC, double perimeter){
+        double halfPerimeter = perimeter / 2;
+        double height = (2 * Math.sqrt(halfPerimeter * (halfPerimeter - sideA) * (halfPerimeter - sideB) * (halfPerimeter - sideC))) / sideA;
+        double area = height * (sideA / 2);
+        return area;
+    }
+}
+
+
+Homework 11
+
+public static void main(String[] args) {
+        int[] numbers = new int [10];
+
+        createArray(numbers);
+        printArray(numbers);
+    }
+
+    public static void createArray (int[] numbers){
+        Random rand = new Random();
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = rand.nextInt(100);
+        }
+    }
+
+    public static void printArray (int[] numbers){
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(i + " -  " + numbers[i]);
+        }
+    }
+}
+
+
+Homework 12
+
+public static void main(String[] args) {
+        int[] numbers = new int [10];
+        Random rand = new Random();
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = rand.nextInt(100);
+        }
+
+        sortedArrayInAscOrder(numbers);
+
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(i + " -  " + numbers[i]);
+        }
+    }
+
+    public static void sortedArrayInAscOrder (int[] numbers){
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = 0; j < numbers.length - 1; j++) {
+                if (numbers[j] > numbers[j + 1])
+                {
+                    int keep = numbers[j];
+                    numbers[j] = numbers[j + 1];
+                    numbers[j + 1] = keep;
+                }
+            }
+        }
+    }
+}
+
+
+Homework 13
+
+public static void main(String[] args) {
+        int[] numbers = new int [10];
+        Random rand = new Random();
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = rand.nextInt(100);
+        }
+
+        sortedArrayInDescOrder(numbers);
+
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(i + " -  " + numbers[i]);
+        }
+    }
+
+    public static void sortedArrayInDescOrder (int[] numbers){
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = 0; j < numbers.length - 1; j++) {
+                if (numbers[j] < numbers[j + 1])
+                {
+                    int keep = numbers[j];
+                    numbers[j] = numbers[j + 1];
+                    numbers[j + 1] = keep;
+                }
+            }
+        }
+    }
+}
+
+
+Homework 14
+
+public static void main(String[] args) {
+        printAllPrimeNumbersUntil100();
+    }
+
+    public static void printAllPrimeNumbersUntil100(){
+        for (int i = 100; i > 1 ; i--) {
+            if (i == 2 || i == 3){
+                System.out.println(i + " is prime");
+            }
+            for (int j = i / 2; j > 1 && i % j != 0; j--) {
+
+                    System.out.println(i + " is prime");
+                    break;
+            }
+        }
+    }
+}
+
+
+Homework 15
+
+public static void main(String[] args) {
+        Random rand = new Random();
+        int[] myArray = new int[10];
+        int randomNum;
+        for (int i = 0; i < myArray.length; i++) {
+            randomNum = rand.nextInt(100);
+            myArray[i] = randomNum;
+        }
+
+        myArray = makeInverseArray(myArray);
+
+        for (int i = 0; i < myArray.length; i++) {
+            System.out.println(myArray[i]);
+        }
+    }
+    public static int[] makeInverseArray (int[] numbers){
+        int temp;
+        int numbersLength = numbers.length;
+        for (int i = 0; i < numbersLength / 2; i++) {
+            temp = numbers[numbersLength - i - 1];
+            numbers[numbersLength - i - 1] = numbers[i];
+            numbers[i] = temp;
+        }
+        return numbers;
+    }
+}
+
+
+Homework 16
+
+public static void main(String[] args) {
+        String word = "abcba";
+        if (defineWordPalindromeOrNot(word)){
+            System.out.println("palindrome");
+        }
+        else {
+            System.out.println("none");
+        }
+
+    }
+    public static boolean defineWordPalindromeOrNot(String word){
+        int maxValue = word.length() - 1;
+        int temp = 0;
+        for (int i = 0; i < word.length(); i++) {
+            if ( word.charAt(i) == word.charAt(maxValue)){
+                temp++;
+            }
+            maxValue--;
+        }
+        if(temp == word.length()){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+
+
+Homework 17
+
+public static void main(String[] args) {
+        System.out.println("Factorial is " + calculateFactorial(7));
+
+    }
+    public static int calculateFactorial (int num){
+        int factorial = 1;
+        for (int i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
+}
+
+
+Homework 18
+
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input the size of matrix");
+        printMatrix(scanner.nextInt());
+
+    }
+    public static void printMatrix (int num){
+        Random rand = new Random();
+        char[][] matrix = new char[num][num];
+        boolean forRandomChar;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                forRandomChar = rand.nextBoolean();
+                if (forRandomChar){
+                    matrix[i][j] = '+';
+                }
+                else {
+                    matrix[i][j] = '-';
+                }
+            }
+        }
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + "  ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+Homework 19
+
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input the size of matrix");
+        int[][] matrix = makeMatrix(scanner.nextInt());
+        System.out.println("------------   90*");             // xndri pahanji mej tpel chkar bayc tpel em vor miangamic hesht stugvi
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("------------  180 *");
+        matrix = rotateMatrix90(matrix);
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("------------  270*");
+        matrix = rotateMatrix180(matrix);
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("------------");
+        matrix = rotateMatrix270(matrix);
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+    }
+    public static int[][] makeMatrix (int num){
+        Random rand = new Random();
+        int[][] matrix = new int[num][num];
+        int randomNum;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                randomNum = rand.nextInt(51) + 27;
+                matrix[i][j] = randomNum;
+            }
+        }
+        return matrix;
+    }
+
+    public static int[][] rotateMatrix90(int[][] matrix){
+
+        int[][] rotateMatrix = new int[matrix.length][matrix[0].length];
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                rotateMatrix[j][matrix.length - i - 1] = matrix[i][j];
+            }
+        }
+        return rotateMatrix;
+    }
+
+    public static int[][] rotateMatrix180(int[][] matrix){
+
+        int[][] rotateMatrix = new int[matrix.length][matrix[0].length];
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                rotateMatrix[j][matrix[0].length - 1 - i] = matrix[i][j];
+            }
+        }
+        return rotateMatrix;
+    }
+
+    public static int[][] rotateMatrix270(int[][] matrix){
+
+        int[][] rotateMatrix = new int[matrix.length][matrix[0].length];
+        int b = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                rotateMatrix[i][j] = matrix[matrix.length - j - 1][i];
+            }
+        }
+        return rotateMatrix;
+    }
+}
+
+
+Homework 20
+
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int inputNumber;
+        do {
+            System.out.println("------------------MENU-------------");
+            System.out.println("Press 1 -  to print “Hello Word”");
+            System.out.println(" Press 2 -  to print “Hello Vorld”");
+            System.out.println("Press 3 -  to print “Hello Uorld”");
+            System.out.println(" Press 4 -  EXIT");
+            System.out.println("--------------------------------------------");
+            inputNumber = scanner.nextInt();
+
+            if (inputNumber == 1){
+                System.out.println("Hello Word");
+            }
+            if (inputNumber == 2){
+                System.out.println("Hello Vorld");
+            }
+            if (inputNumber == 3){
+                System.out.println("Hello Uorld");
+            }
+        }
+        while (inputNumber != 4);
+        System.out.println("EXIT");
+    }
+
+
+Homework 21
+
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input the size of matrix");
+        int[][] matrix = makeMatrix(scanner.nextInt());
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+        int inputNum;
+        do {
+            System.out.println("———————- MENU —————-");
+            System.out.println("Press 1 For rotating 90*");
+            System.out.println("Press 2 For rotating 180*");
+            System.out.println("Press 3 For rotating 270*");
+            System.out.println("Press 4 to Exit");
+            System.out.println("—————————————————————————");
+            inputNum = scanner.nextInt();
+
+            if (inputNum == 1){
+                rotateMatrix90(matrix);
+
+                for (int i = 0; i < matrix.length; i++) {
+                    for (int j = 0; j < matrix[i].length; j++) {
+                        System.out.print(matrix[i][j] + " ");
+                    }
+                    System.out.println();
+                }
+            }
+
+            if (inputNum == 2){
+                rotateMatrix180(matrix);
+
+                for (int i = 0; i < matrix.length; i++) {
+                    for (int j = 0; j < matrix[i].length; j++) {
+                        System.out.print(matrix[i][j] + " ");
+                    }
+                    System.out.println();
+                }
+            }
+
+            if (inputNum == 3){
+                rotateMatrix270(matrix);
+
+                for (int i = 0; i < matrix.length; i++) {
+                    for (int j = 0; j < matrix[i].length; j++) {
+                        System.out.print(matrix[i][j] + " ");
+                    }
+                    System.out.println();
+                }
+            }
+        }
+        while (inputNum != 4);
+
+        System.out.println("Exit");
+    }
+    public static int[][] makeMatrix (int num){
+        Random rand = new Random();
+        int[][] matrix = new int[num][num];
+        int randomNum;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                randomNum = rand.nextInt(51) + 27;
+                matrix[i][j] = randomNum;
+            }
+        }
+        return matrix;
+    }
+
+    public static int[][] rotateMatrix90(int[][] matrix){
+
+        int[][] rotateMatrix = new int[matrix.length][matrix[0].length];
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                rotateMatrix[j][matrix.length - i - 1] = matrix[i][j];
+            }
+        }
+        return rotateMatrix;
+    }
+
+    public static int[][] rotateMatrix180(int[][] matrix){
+
+        int[][] rotateMatrix = new int[matrix.length][matrix[0].length];
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                rotateMatrix[j][matrix[0].length - 1 - i] = matrix[i][j];
+            }
+        }
+        return rotateMatrix;
+    }
+
+    public static int[][] rotateMatrix270(int[][] matrix){
+
+        int[][] rotateMatrix = new int[matrix.length][matrix[0].length];
+        int b = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                rotateMatrix[i][j] = matrix[matrix.length - j - 1][i];
+            }
+        }
+        return rotateMatrix;
+    }
+}
+
